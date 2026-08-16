@@ -10,7 +10,6 @@
 
   <title>AGL POD</title>
 
-  <!-- 홈 화면 / 브라우저 아이콘 -->
   <link
     rel="icon"
     type="image/png"
@@ -28,47 +27,81 @@
   >
 
   <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     html,
     body {
       margin: 0;
       padding: 0;
       width: 100%;
-      height: 100%;
+      min-height: 100%;
       background: #f4f6fb;
       font-family: Arial, Helvetica, sans-serif;
+      color: #111;
+    }
+
+    body {
+      min-height: 100vh;
     }
 
     .screen {
-      width: 100%;
-      height: 100%;
+      min-height: 100vh;
+      padding: 40px 24px;
 
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
 
       text-align: center;
     }
 
     .logo {
-      width: 150px;
-      height: 150px;
+      width: 180px;
+      height: 180px;
       object-fit: contain;
     }
 
     .title {
-      margin-top: 18px;
-
-      font-size: 34px;
+      margin-top: 24px;
+      font-size: 42px;
       font-weight: 800;
-
-      color: #111;
     }
 
-    .loading {
-      margin-top: 12px;
+    .subtitle {
+      margin-top: 10px;
+      font-size: 20px;
+      color: #666;
+    }
 
-      font-size: 18px;
+    .openButton {
+      width: 100%;
+      max-width: 520px;
+      height: 96px;
+
+      margin-top: 42px;
+
+      border: none;
+      border-radius: 48px;
+
+      background: #5268ad;
+      color: white;
+
+      font-size: 30px;
+      font-weight: 800;
+
+      cursor: pointer;
+    }
+
+    .hint {
+      margin-top: 28px;
+      max-width: 520px;
+
+      font-size: 17px;
+      line-height: 1.5;
       color: #777;
     }
   </style>
@@ -89,8 +122,20 @@
     AGL POD
   </div>
 
-  <div class="loading">
-    Opening...
+  <div class="subtitle">
+    Photo Upload
+  </div>
+
+  <button
+    class="openButton"
+    onclick="openApp()"
+  >
+    OPEN AGL POD
+  </button>
+
+  <div class="hint">
+    Add this page to your Home screen first.<br>
+    홈 화면에 이 페이지를 추가한 뒤 사용하세요.
   </div>
 
 </div>
@@ -98,17 +143,11 @@
 
 <script>
 
-  const APP_URL =
+function openApp() {
+
+  window.location.href =
     'https://script.google.com/macros/s/AKfycbxsOGVE7UlO8yuE-CR9yyYPWr3Yp7TH4wI6vaKsnCcvr00eZTuXHuadt_MLgz2-culQ/exec';
-
-
-  setTimeout(function() {
-
-    window.location.replace(
-      APP_URL
-    );
-
-  }, 300);
+}
 
 </script>
 
