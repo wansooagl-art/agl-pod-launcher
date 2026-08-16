@@ -9,7 +9,7 @@
   "theme_color": "#5268ad",
   "icons": [
     {
-      "src": "AGL_POD_ICON_SMALL.png",
+      "src": "AGL_POD_ICON_MEDIUM.png",
       "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "any"
