@@ -1,0 +1,18 @@
+{
+  "name": "AGL POD",
+  "short_name": "AGL POD",
+  "description": "AGL POD Photo Upload",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f6fb",
+  "theme_color": "#5268ad",
+  "icons": [
+    {
+      "src": "AGL_POD_ICON.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
