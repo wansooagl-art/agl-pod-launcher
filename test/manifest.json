@@ -10,12 +10,14 @@
     {
       "src": "../AGL_POD_ICON_SMALL.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "../AGL_POD_ICON.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
