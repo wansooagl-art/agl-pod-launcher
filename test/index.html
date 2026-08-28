@@ -19,95 +19,155 @@
 
   <meta name="theme-color" content="#3f518e">
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="AGL POD TEST">
+  <meta name="apple-mobile-web-app-capable"
+        content="yes">
+
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="default">
+
+  <meta name="apple-mobile-web-app-title"
+        content="AGL POD TEST">
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6fb;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f6fb;
+      font-family: Arial, Helvetica, sans-serif;
       text-align: center;
     }
 
     .box {
-      padding: 30px;
+      width: 90%;
+      max-width: 500px;
+      padding: 35px 20px;
     }
 
-    img {
+    .logo {
       width: 180px;
       height: 180px;
       object-fit: contain;
-      border-radius: 30px;
+      border-radius: 32px;
     }
 
     h1 {
-      font-size: 34px;
-      margin: 20px 0 10px;
+      margin: 24px 0 15px;
+      font-size: 38px;
     }
 
     p {
-      font-size: 22px;
+      font-size: 23px;
+      line-height: 1.5;
       color: #555;
-      line-height: 1.4;
+    }
+
+    .installNotice {
+      margin-top: 25px;
+      padding: 25px;
+      background: #fff;
+      border-radius: 20px;
+      font-size: 22px;
+      line-height: 1.5;
     }
 
     button {
-      margin-top: 20px;
-      padding: 20px 35px;
+      width: 100%;
+      margin-top: 30px;
+      padding: 22px;
       border: none;
-      border-radius: 18px;
+      border-radius: 20px;
       background: #3f518e;
       color: white;
-      font-size: 25px;
+      font-size: 26px;
       font-weight: bold;
+      cursor: pointer;
     }
   </style>
-
-  <script>
-    const APP_URL =
-      "https://script.google.com/macros/s/AKfycbwaa9HCXuYZ5FdZgticafZKUsGvgNrb_IDOg_p2HFu4Xy62hQX3t4KwG-pLGuKi2uo/exec";
-
-    window.addEventListener("load", function () {
-
-      const standalone =
-        window.matchMedia("(display-mode: standalone)").matches ||
-        window.navigator.standalone === true;
-
-      if (standalone) {
-        window.location.replace(APP_URL);
-      }
-    });
-
-    function openApp() {
-      window.location.href = APP_URL;
-    }
-  </script>
 </head>
 
 <body>
 
-  <div class="box">
+<div class="box">
 
-    <img src="../AGL_POD_ICON.png">
+  <img
+    class="logo"
+    src="../AGL_POD_ICON.png"
+    alt="AGL POD"
+  >
 
-    <h1>AGL POD TEST</h1>
+  <h1>AGL POD TEST</h1>
 
-    <p>
-      Add this page to your Home Screen.<br>
-      홈 화면에 추가한 후 아이콘으로 실행하세요.
-    </p>
+  <div class="installNotice">
+    <strong>Install First</strong><br><br>
 
-    <button onclick="openApp()">
-      Open AGL POD TEST
-    </button>
-
+    Chrome menu → Add to Home screen<br>
+    홈 화면에 먼저 추가하세요.
   </div>
+
+  <p>
+    After installation, open AGL POD TEST
+    from the icon on your Home Screen.
+  </p>
+
+  <button onclick="openTestApp()">
+    Open TEST Web App
+  </button>
+
+</div>
+
+<script>
+
+const TEST_APP_URL =
+  "https://script.google.com/macros/s/AKfycbwaa9HCXuYZ5FdZgticafZKUsGvgNrb_IDOg_p2HFu4Xy62hQX3t4KwG-pLGuKi2uo/exec";
+
+
+/*
+  IMPORTANT
+
+  Normal browser:
+  DO NOT automatically redirect.
+  This gives Chrome time to read the
+  manifest and AGL icon.
+
+  Installed / standalone:
+  Automatically open TEST Web App.
+*/
+
+window.addEventListener(
+  'load',
+  function() {
+
+    const installed =
+      window.matchMedia(
+        '(display-mode: standalone)'
+      ).matches ||
+      window.navigator.standalone === true;
+
+    if (installed) {
+
+      setTimeout(
+        function() {
+          window.location.replace(
+            TEST_APP_URL
+          );
+        },
+        800
+      );
+    }
+  }
+);
+
+
+function openTestApp() {
+
+  window.location.href =
+    TEST_APP_URL;
+}
+
+</script>
 
 </body>
 </html>
