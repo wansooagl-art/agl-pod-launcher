@@ -7,6 +7,7 @@
         content="width=device-width, initial-scale=1.0">
 
   <title>AGL POD TEST</title>
+
   <link rel="manifest" href="./manifest.json">
 
   <link rel="icon"
@@ -16,23 +17,97 @@
   <link rel="apple-touch-icon"
         href="../AGL_POD_ICON.png">
 
-  <meta name="apple-mobile-web-app-capable"
-        content="yes">
+  <meta name="theme-color" content="#3f518e">
 
-  <meta name="apple-mobile-web-app-status-bar-style"
-        content="default">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="AGL POD TEST">
 
-  <meta name="apple-mobile-web-app-title"
-        content="AGL POD TEST">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .box {
+      padding: 30px;
+    }
+
+    img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 30px;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin: 20px 0 10px;
+    }
+
+    p {
+      font-size: 22px;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 20px 35px;
+      border: none;
+      border-radius: 18px;
+      background: #3f518e;
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
+    }
+  </style>
 
   <script>
-    window.location.replace(
-      "https://script.google.com/macros/s/AKfycbwaa9HCXuYZ5FdZgticafZKUsGvgNrb_IDOg_p2HFu4Xy62hQX3t4KwG-pLGuKi2uo/exec"
-    );
+    const APP_URL =
+      "https://script.google.com/macros/s/AKfycbwaa9HCXuYZ5FdZgticafZKUsGvgNrb_IDOg_p2HFu4Xy62hQX3t4KwG-pLGuKi2uo/exec";
+
+    window.addEventListener("load", function () {
+
+      const standalone =
+        window.matchMedia("(display-mode: standalone)").matches ||
+        window.navigator.standalone === true;
+
+      if (standalone) {
+        window.location.replace(APP_URL);
+      }
+    });
+
+    function openApp() {
+      window.location.href = APP_URL;
+    }
   </script>
 </head>
 
 <body>
-  <p>Opening AGL POD TEST...</p>
+
+  <div class="box">
+
+    <img src="../AGL_POD_ICON.png">
+
+    <h1>AGL POD TEST</h1>
+
+    <p>
+      Add this page to your Home Screen.<br>
+      홈 화면에 추가한 후 아이콘으로 실행하세요.
+    </p>
+
+    <button onclick="openApp()">
+      Open AGL POD TEST
+    </button>
+
+  </div>
+
 </body>
 </html>
