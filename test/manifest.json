@@ -1,0 +1,21 @@
+{
+  "name": "AGL POD TEST",
+  "short_name": "AGL POD TEST",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3f518e",
+  "icons": [
+    {
+      "src": "../AGL_POD_ICON_SMALL.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../AGL_POD_ICON.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
