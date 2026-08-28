@@ -8,7 +8,7 @@
   "theme_color": "#3f518e",
   "icons": [
     {
-      "src": "../AGL_POD_ICON_SMALL.png",
+      "src": "../AGL_POD_ICON_MEDIUM.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
