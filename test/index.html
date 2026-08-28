@@ -1,48 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  >
 
   <title>AGL POD TEST</title>
 
+  <!-- TEST Manifest -->
   <link rel="manifest" href="./manifest.json">
 
-<link rel="icon"
-      type="image/png"
-      href="../AGL_POD_ICON_MEDIUM.png">
+  <!-- Same icon style as existing AGL POD -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="../AGL_POD_ICON_MEDIUM.png"
+  >
 
-<link rel="apple-touch-icon"
-      href="../AGL_POD_ICON_MEDIUM.png">
+  <link
+    rel="apple-touch-icon"
+    href="../AGL_POD_ICON_MEDIUM.png"
+  >
 
-  <meta name="theme-color" content="#3f518e">
+  <meta name="theme-color" content="#5268ad">
 
-  <meta name="apple-mobile-web-app-capable"
-        content="yes">
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
 
-  <meta name="apple-mobile-web-app-status-bar-style"
-        content="default">
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+  >
 
-  <meta name="apple-mobile-web-app-title"
-        content="AGL POD TEST">
+  <meta
+    name="apple-mobile-web-app-title"
+    content="AGL POD TEST"
+  >
 
   <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html,
     body {
       margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6fb;
+    }
+
+    body {
       min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
-      background: #f4f6fb;
-      font-family: Arial, Helvetica, sans-serif;
+      align-items: center;
       text-align: center;
     }
 
-    .box {
+    .container {
       width: 90%;
-      max-width: 500px;
+      max-width: 520px;
       padding: 35px 20px;
     }
 
@@ -54,120 +80,174 @@
     }
 
     h1 {
-      margin: 24px 0 15px;
+      margin: 24px 0 10px;
       font-size: 38px;
+      color: #222;
     }
 
-    p {
-      font-size: 23px;
-      line-height: 1.5;
+    .test-label {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: #5268ad;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .install-box {
+      margin-top: 28px;
+      padding: 25px 20px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .install-title {
+      font-size: 25px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 15px;
+    }
+
+    .install-text {
+      font-size: 21px;
+      line-height: 1.6;
       color: #555;
     }
 
-    .installNotice {
-      margin-top: 25px;
-      padding: 25px;
-      background: #fff;
-      border-radius: 20px;
-      font-size: 22px;
+    .important {
+      margin-top: 20px;
+      font-size: 19px;
       line-height: 1.5;
+      color: #777;
     }
 
-    button {
+    .open-button {
       width: 100%;
       margin-top: 30px;
-      padding: 22px;
-      border: none;
-      border-radius: 20px;
-      background: #3f518e;
+      padding: 22px 20px;
+      border: 0;
+      border-radius: 18px;
+      background: #5268ad;
       color: white;
-      font-size: 26px;
+      font-size: 25px;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    .open-button:active {
+      transform: scale(0.98);
     }
   </style>
 </head>
 
 <body>
 
-<div class="box">
+  <div class="container">
 
-  <img
-    class="logo"
-    src="../AGL_POD_ICON.png"
-    alt="AGL POD"
-  >
+    <img
+      class="logo"
+      src="../AGL_POD_ICON_MEDIUM.png"
+      alt="AGL POD TEST"
+    >
 
-  <h1>AGL POD TEST</h1>
+    <h1>AGL POD TEST</h1>
 
-  <div class="installNotice">
-    <strong>Install First</strong><br><br>
+    <div class="test-label">
+      TEST VERSION
+    </div>
 
-    Chrome menu → Add to Home screen<br>
-    홈 화면에 먼저 추가하세요.
+    <div class="install-box">
+
+      <div class="install-title">
+        Install AGL POD TEST
+      </div>
+
+      <div class="install-text">
+        Chrome menu<br>
+        ↓<br>
+        <strong>Add to Home screen</strong>
+        <br><br>
+        먼저 홈 화면에 추가하세요.
+      </div>
+
+    </div>
+
+    <div class="important">
+      설치하기 전에는 아래 버튼을 누르지 마세요.<br>
+      홈 화면에 추가한 후 AGL POD TEST 아이콘으로 실행하세요.
+    </div>
+
+    <button
+      class="open-button"
+      onclick="openTestApp()"
+    >
+      Open TEST Web App
+    </button>
+
   </div>
 
-  <p>
-    After installation, open AGL POD TEST
-    from the icon on your Home Screen.
-  </p>
 
-  <button onclick="openTestApp()">
-    Open TEST Web App
-  </button>
+  <script>
 
-</div>
-
-<script>
-
-const TEST_APP_URL =
-  "https://script.google.com/macros/s/AKfycbwaa9HCXuYZ5FdZgticafZKUsGvgNrb_IDOg_p2HFu4Xy62hQX3t4KwG-pLGuKi2uo/exec";
+    const TEST_APP_URL =
+      "https://script.google.com/macros/s/AKfycbwaa9HCXuYZ5FdZgticafZKUsGvgNrb_IDOg_p2HFu4Xy62hQX3t4KwG-pLGuKi2uo/exec";
 
 
-/*
-  IMPORTANT
+    /*
+      IMPORTANT:
 
-  Normal browser:
-  DO NOT automatically redirect.
-  This gives Chrome time to read the
-  manifest and AGL icon.
+      Normal URL:
+      /test/
 
-  Installed / standalone:
-  Automatically open TEST Web App.
-*/
+      -> Stay on installation page.
+      -> DO NOT automatically open Apps Script.
 
-window.addEventListener(
-  'load',
-  function() {
 
-    const installed =
-      window.matchMedia(
-        '(display-mode: standalone)'
-      ).matches ||
-      window.navigator.standalone === true;
+      Installed Home Screen URL:
+      /test/?launch=1
 
-    if (installed) {
+      -> Open AGL POD TEST automatically.
+    */
 
-      setTimeout(
-        function() {
+    window.addEventListener(
+      "load",
+      function () {
+
+        const params =
+          new URLSearchParams(
+            window.location.search
+          );
+
+        const launch =
+          params.get("launch");
+
+        if (launch === "1") {
+
           window.location.replace(
             TEST_APP_URL
           );
-        },
-        800
-      );
+
+        }
+
+      }
+    );
+
+
+    /*
+      Manual open button
+    */
+
+    function openTestApp() {
+
+      window.location.href =
+        TEST_APP_URL;
+
     }
-  }
-);
 
-
-function openTestApp() {
-
-  window.location.href =
-    TEST_APP_URL;
-}
-
-</script>
+  </script>
 
 </body>
 </html>
